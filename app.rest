@@ -1,0 +1,45 @@
+## Global Variables
+@BaseUrl = http://localhost:8080/api
+
+## Todos
+## ---------------------------------
+# @name PostTodo
+POST {{BaseUrl}}/todos
+Content-Type: application/json
+
+{
+    "title": "Belajar PBO",
+    "description": "Mempelajari dasar-dasar PBO untuk pengembangan aplikasi web."
+}
+###
+
+# @name GetAllTodos
+GET {{BaseUrl}}/todos
+###
+
+# @name GetAllTodosWithSearch
+GET {{BaseUrl}}/todos?search=PBO
+###
+
+## Mengambil ID Todo pertama dari response GetAllTodos
+@todoId = {{GetAllTodos.response.body.data.todos[0].id}}
+
+# @name GetTodoById
+GET {{BaseUrl}}/todos/{{todoId}}
+###
+
+# @name PutTodoById
+PUT {{BaseUrl}}/todos/{{todoId}}
+Content-Type: application/json
+
+{
+    "title": "Belajar Spring Boot Lanjutan",
+    "description": "Mempelajari fitur-fitur lanjutan Spring Boot.",
+    "isFinished": true
+}
+
+###
+
+# @name DeleteTodoById
+DELETE {{BaseUrl}}/todos/{{todoId}}
+###

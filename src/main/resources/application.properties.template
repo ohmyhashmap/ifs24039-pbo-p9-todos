@@ -1,0 +1,35 @@
+spring.application.name=todo
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/db_target
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+# Gunakan ini untuk memperbarui skema database sesuai entitas
+spring.jpa.hibernate.ddl-auto=update 
+
+# Gunakan ini untuk membuat ulang skema database setiap kali aplikasi dijalankan
+# spring.jpa.hibernate.ddl-auto=create 
+
+# DevTools configuration
+spring.devtools.restart.enabled=true
+spring.devtools.restart.poll-interval=1000
+spring.devtools.restart.quiet-period=400
+
+# LiveReload configuration
+spring.devtools.livereload.enabled=true
+spring.devtools.livereload.port=35729
+
+# Exclude paths that don't need restart
+spring.devtools.restart.exclude=static/**,public/**,templates/**
+
+# Logging Level
+spring.main.banner-mode=console
+logging.level.root=INFO
+logging.level.org.springframework=INFO
+logging.level.org.springframework.boot.test=DEBUG
+logging.level.org.delcom=DEBUG
+
+# Format log dengan warna
+spring.output.ansi.enabled=ALWAYS

@@ -5,8 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.delcom.app.controllers.HomeController;
-
 class HomeControllerUnitTest {
     @Test
     @DisplayName("Mengembalikan pesan selamat datang yang benar")

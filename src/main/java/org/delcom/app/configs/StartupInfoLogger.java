@@ -16,9 +16,10 @@ public class StartupInfoLogger implements ApplicationListener<ApplicationReadyEv
         String contextPath = env.getProperty("server.servlet.context-path", "/");
         if (contextPath == null) {
             contextPath = "";
-        } else if (contextPath.equals("/")) {
-            contextPath = "";
         }
+        // else if (contextPath.equals("/")) {
+        // contextPath = "";
+        // }
 
         // Deteksi LiveReload dari DevTools
         boolean liveReloadEnabled = env.getProperty("spring.devtools.livereload.enabled", Boolean.class, false);
